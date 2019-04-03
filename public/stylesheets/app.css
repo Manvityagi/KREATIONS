@@ -1,0 +1,33 @@
+i.code.icon {
+    font-size: 2em;
+}
+
+/*
+.container.main {
+    margin-top: 7.0em;
+} */
+
+div.ui.main {
+    margin-top: 7.0em;
+}
+
+#delete {
+    display: inline; 
+}
+
+
+/*
+*/
+
+
+.thumbnail img {
+    width: 100% ;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}

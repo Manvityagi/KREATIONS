@@ -6,12 +6,12 @@ var express        = require("express"),
   expressSanitizer = require("express-sanitizer"),
     seedDB         = require("./seeds"),
     Comment        = require("./models/comment"),
-    Blog           = require("./models/blog");
+    Writeup        = require("./models/writeup");
     
     seedDB();
     
     //APP CONFIG
-mongoose.connect("mongodb://localhost/yelp_camp",{useNewUrlParser: true});     
+mongoose.connect("mongodb://localhost/kreationsDB",{useNewUrlParser: true});     
 app.use(bodyParser.urlencoded({extended: true}));
 app.use (expressSanitizer());
 app.use(express.static("public"));
@@ -20,7 +20,7 @@ app.use(methodOverride("_method"));
 
 
 /*
-Blog.create({
+Writeup.create({
     title: "Food",
     image: "https://farm1.staticflickr.com/66/168201626_73bded336e.jpg",
     body: "HELLO! GOOD FOOD IS GOOD LIFE !"
@@ -28,85 +28,88 @@ Blog.create({
 */
 //RESTful Routes
 
-
-app.get("/",function(req,res){
-    res.redirect("/blogs");
+app.get("/",(req,res) => {
+    res.send("Home Page with Login/signup")
 });
 
+// app.get("/writeups",function(req,res){
+//     res.redirect("/writeups");
+// });
+
 //INDEX ROUTE
-app.get("/blogs",function(req,res){
-    Blog.find({},function(err, blogs){
+app.get("/writeups",function(req,res){
+    Writeup.find({},function(err, writeups){
         if(err){
             console.log("error!")
         }else{
-             res.render("index",{blogs:blogs});     
+             res.render("index",{writeups:writeups});     
         }
     });
 });
  
  
 //NEW ROUTE
-app.get("/blogs/new",function(req,res){
+app.get("/writeups/new",function(req,res){
     res.render("new");
 });
 
 //CREATE ROUTE
-app.post("/blogs",function(req,res){
-    //create blog
-    req.body.blog.body = req.sanitize(req.body.blog.body)
-    Blog.create(req.body.blog, function(err, newBlog){
+app.post("/writeups",function(req,res){
+    //create writeup
+    req.body.writeup.body = req.sanitize(req.body.writeup.body)
+    Writeup.create(req.body.writeup, function(err, newWriteup){
         if(err){
             console.log(err);
         }else{
-            res.redirect("/blogs");
+            res.redirect("/writeups");
         }
     });
 });
 
 
-//logic: take the id returned, find the corresponding blog & render the show template
-app.get("/blogs/:id",function(req,res){
-    Blog.findById(req.params.id).populate("comments").exec(function(err,foundblog){
+//logic: take the id returned, find the corresponding writeup & render the show template
+app.get("/writeups/:id",function(req,res){
+    Writeup.findById(req.params.id).populate("comments").exec(function(err,foundWriteup){
 // SHOW ROUTE
         if(err){
-            res.redirect("/blogs");
+            res.redirect("/writeups");
         }else{
-             res.render("show",{blog: foundblog});     
+             res.render("show",{writeup: foundWriteup});     
         }
     });
 });
 
 //EDIT ROUTE
-app.get("/blogs/:id/edit", function(req,res){
-    Blog.findById(req.params.id,function(err,foundblog){
+app.get("/writeups/:id/edit", function(req,res){
+    Writeup.findById(req.params.id,function(err,foundWriteup){
         if(err){
-            res.redirect("/blogs");
+            res.redirect("/writeups");
         }else{
-            res.render("edit",{blog: foundblog});         
+            res.render("edit",{Writeup: foundWriteup});         
         }
     });
 });
 
 //UPDATE ROUTE
-app.put("/blogs/:id",function(req,res){
-     req.body.blog.body = req.sanitize(req.body.blog.body)
-    Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog){
+app.put("/writeups/:id",function(req,res){
+     req.body.writeup.body = req.sanitize(req.body.writeup.body)
+    writeup.findByIdAndUpdate(req.params.id, req.body.writeup, function(err, updatedwriteup){
         if(err){
-            res.redirect("/blogs");
+            res.redirect("/writeups");
         } else {
-            res.redirect("/blogs/" + req.params.id);
+            res.redirect("/writeups/" + req.params.id);
         }
     });
 });
 
 //DELETE ROUTE
-app.delete("/blogs/:id",function(req,res){
-    //destroy blog
-    Blog.findByIdAndRemove(req.params.id, function(err){
+app.delete("/writeups/:id",function(req,res){
+    //destroy writeup
+    Writeup.findByIdAndRemove(req.params.id, function(err){
         if(err){
-            res.redirect("/blogs");
+            res.redirect("/writeups");
         }else{
-            res.redirect("/blogs");
+            res.redirect("/writeups");
         }
     });
     //redirect
@@ -117,19 +120,19 @@ app.delete("/blogs/:id",function(req,res){
 //=====================================//
 
 //NEW (GET)
-app.get("/blogs/:id/comments/new",function(req,res){
-        Blog.findById(req.params.id,function(err, blog){
+app.get("/writeups/:id/comments/new",function(req,res){
+        Writeup.findById(req.params.id,function(err, writeup){
             if(err){
                 console.log(err);
             }else{
-                  res.render("newblog",{blog: blog})   
+                  res.render("newWriteup",{writeup: writeup})   
             }
         })
 })
 
 //CREATE(POST)
-app.post("/blogs/:id/comments",function(req, res){
-    Blog.findById(req.params.id,function(err, foundblog) {
+app.post("/writeups/:id/comments",function(req, res){
+    Writeup.findById(req.params.id,function(err, foundWriteup) {
         if(err){
             console.log(err);
         }else{
@@ -137,18 +140,18 @@ app.post("/blogs/:id/comments",function(req, res){
                 if(err){
                     console.log(err);
                 }else{
-                    foundblog.comments.push(comment);
-                    foundblog.save();
-                    res.redirect("/blogs/" + foundblog._id)
+                    foundWriteup.comments.push(comment);
+                    foundWriteup.save();
+                    res.redirect("/writeups/" + foundWriteup._id)
                 }
-            })
+            });
         }
-    })
-})
+    });
+});
 
 
 
 
-app.listen(process.env.PORT,process.env.IP,function(){
-    console.log("The blog_App server has started")
+app.listen(3030,function(){
+    console.log("The Kreations_App server has started")
 }); 

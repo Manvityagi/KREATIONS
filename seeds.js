@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-var Blog     = require("./models/blog");
+var Blog     = require("./models/writeup");
 var Comment  = require("./models/comment")
 //delete all existing blogs
 //add some new blogs

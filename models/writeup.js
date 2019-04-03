@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 //MONGOOSE MODEL CONFIG
-var blogSchema = new mongoose.Schema({
+var writeUpSchema = new mongoose.Schema({
     title: String,
     image: String,
     body: String,
@@ -14,4 +14,4 @@ var blogSchema = new mongoose.Schema({
         ]
 });
 
-module.exports = mongoose.model("Blog",blogSchema);
+module.exports = mongoose.model("Writeup",writeUpSchema);

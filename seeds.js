@@ -6,19 +6,48 @@ var Comment  = require("./models/comment")
 
 var data = [
     {
-        title: "CLouds Fiesta",
-        image: "https://pixabay.com/get/ee33b2082bf51c22d2524518b7444795ea76e5d004b0144593f5c57fa5e9b6_340.jpg",
-        body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nulla felis, iaculis blandit rhoncus non, facilisis eget libero. Nunc tincidunt arcu et viverra iaculis. Sed molestie in justo non interdum. Vestibulum eget purus nec ex feugiat aliquet vel vitae orci. Nam convallis malesuada dictum. Duis sagittis sit amet risus vel vehicula. Suspendisse accumsan vestibulum nisi, sed tincidunt erat convallis nec. Aliquam erat volutpat. Mauris sagittis tempus vehicula."
+        title: "BEST FRIEND",
+        image: "https://images.pexels.com/photos/206582/pexels-photo-206582.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        body: `The one you love the most,
+        The one you fight with the most,
+        The one you care for the most,
+        The one who loves you the most.`
     },
      {
-        title: "Rock Fields",
-        image: "https://pixabay.com/get/e83db70829f6003ed1584d05fb1d4e97e07ee3d21cac104491f6c47da1efb4b8_340.jpg",
-        body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nulla felis, iaculis blandit rhoncus non, facilisis eget libero. Nunc tincidunt arcu et viverra iaculis. Sed molestie in justo non interdum. Vestibulum eget purus nec ex feugiat aliquet vel vitae orci. Nam convallis malesuada dictum. Duis sagittis sit amet risus vel vehicula. Suspendisse accumsan vestibulum nisi, sed tincidunt erat convallis nec. Aliquam erat volutpat. Mauris sagittis tempus vehicula."
+        title: "MOMENT",
+        image: "https://images.pexels.com/photos/298018/pexels-photo-298018.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        body: `Years ago, something broke in me;
+        but that MOMENT that WOUND is still as fresh in my memories as if it occurred a minute ago.`
     },
      {
-        title: "CameybAys",
-        image: "https://farm6.staticflickr.com/5115/5896065607_56ab27661c.jpg",
-        body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nulla felis, iaculis blandit rhoncus non, facilisis eget libero. Nunc tincidunt arcu et viverra iaculis. Sed molestie in justo non interdum. Vestibulum eget purus nec ex feugiat aliquet vel vitae orci. Nam convallis malesuada dictum. Duis sagittis sit amet risus vel vehicula. Suspendisse accumsan vestibulum nisi, sed tincidunt erat convallis nec. Aliquam erat volutpat. Mauris sagittis tempus vehicula."
+        title: "I wish I had never grown up.",
+        image: "https://images.pexels.com/photos/1456951/pexels-photo-1456951.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        body: `Tik tok 
+        Last night I slept a bit late coz i had to finish a work before deadline , 
+        So scheduled an alarm of 9:55 am , planning that I would get up & pack the breakfast at first before 10:15 ...as the mess usually serves it till then only, 
+        The alarm rang Sharp at 9:55 , I  snoozed it off & slept again ,the alarm rang again after 2 mins, i tried to get up but couldn't, I turned it off half-consciously .
+        
+        Tik Tok 
+        Ohh it's 11:30 , breakfast , i ran up to the mess but it was all empty, ok no problem I thought ,
+        I would do lunch early before leaving for a class at 2pm , 
+        Daily chores took me through 12 pm, 
+        I planned to work till 1:00 ,then,have a bath till 1:30 & most awaited lunch in remaining 30 mins & then leave.
+        
+        Tik Tok
+        1:00 , I got up, packed my stuff for bathing, meanwhile I found myself searching for my towel in the room all around,  ohh oh I washed it yesterday, it must be on the roof. I ran as fast as I could to the 4th floor , got my towel,took a bath (not even properly��) but it was already 1:45 when I came out of bathroom . 
+        I lost 15 mins searching for the towel ,going up & down. 
+        Ok no problem, get ready in 5 mins, & do ur lunch in 15 mins, leave by 2:10 ; lunch is important even if I get late by 10 mins for meeting.
+        
+        Tik Tok 
+        Getting ready ,all done , where are my socks ,
+        Not beside shoes,not in the wardrobe, not visible on the bed or table, Mumma gave me 5 pairs of socks , I couldnt find 1. Let's wear the shoes without socks ..no pblm.
+        I am ready,just hairs to be combed , didn't I put the comb on my table last night, where it is man,I am already late , cant leave with unkempted hairs , searching everything around, I found my comb in my roommates book shelf ..phew , ready, tiktok shitt already 2:00 ...i can't have lunch  & leave in 10 mins. 
+        
+        I kept 2 packets of biscuit which Mumma gave me when I last went home.
+        I dont like biscuits though but before entering the classroom I ate them all,with almost tears rolling down my cheeks wishing I wish I had never grown up, wishing to be with my family.
+        
+        
+        ©the_fire_girl`
     }
 ]
 

@@ -127,8 +127,8 @@ app.get("/writeups/:id/comments/new",function(req,res){
             }else{
                   res.render("newWriteup",{writeup: writeup})   
             }
-        })
-})
+        });
+});
 
 //CREATE(POST)
 app.post("/writeups/:id/comments",function(req, res){

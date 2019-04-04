@@ -1,8 +1,8 @@
 var mongoose = require("mongoose");
-var Blog     = require("./models/writeup");
-var Comment  = require("./models/comment")
-//delete all existing blogs
-//add some new blogs
+var Writeup     = require("./models/writeup/writeup");
+var Comment  = require("./models/comment/comment")
+//delete all existing Writeups
+//add some new Writeups
 
 var data = [
     {
@@ -52,21 +52,21 @@ var data = [
 ]
 
    function seedDB(){
-       //remove all Blogs
-       Blog.deleteMany({},function(err){
+       //remove all Writeups
+       Writeup.deleteMany({},function(err){
             if(err){
                 console.log(err);
             }else{
-                console.log("removed all blogs");
+                console.log("removed all Writeups");
             }
             
-            //adding few blogs
+            //adding few Writeups
             data.forEach(function(seed){
-                Blog.create(seed,function(err, blog){
+                Writeup.create(seed,function(err, writeup){
                     if(err){
                         console.log(err);
                     }else{
-                        console.log("created a blog");
+                        console.log("created a writeup");
                         
                         Comment.create({
                             text: "This place is great, but I wish there were hot boys here!",
@@ -75,8 +75,8 @@ var data = [
                             if(err){
                                 console.log(err);
                             }else{
-                                blog.comments.push(comment);
-                                blog.save();
+                                writeup.comments.push(comment);
+                                writeup.save();
                                 console.log("added a comment");
                             }
                         })

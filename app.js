@@ -5,8 +5,8 @@ var express        = require("express"),
     mongoose       = require("mongoose"),
   expressSanitizer = require("express-sanitizer"),
     seedDB         = require("./seeds"),
-    Comment        = require("./models/comment"),
-    Writeup        = require("./models/writeup");
+    Comment        = require("./models/comment/comment"),
+    Writeup        = require("./models/writeup/writeup");
     
     seedDB();
     
